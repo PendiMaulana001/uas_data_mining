@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Mining</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard</h1>
+  </header>
+
+  <nav>
+    <button onclick="showMenu('menu-input', event)" class="active">Input Data</button>
+    <button onclick="showMenu('menu-history', event)">Riwayat</button>
+    <button onclick="showMenu('menu-chart', event)">Visualisasi</button>
+  </nav>
+
+  <main>
+    <section id="menu-input" class="active">
+      <h2>Tambah Data Baru</h2>
+      <div id="inputFields"></div>
+      <button onclick="addData()">Tambahkan dan Cari Cluster</button>
+    </section>
+
+    <section id="menu-history">
+      <h2>Riwayat Data & Klaster</h2>
+      <button onclick="resetRiwayat()" style="background-color: #f44336;">Reset Riwayat</button>
+      <table>
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </section>
+
+    <section id="menu-chart">
+      <h2>Visualisasi Cluster</h2>
+      <canvas id="clusterChart" width="800" height="400"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
